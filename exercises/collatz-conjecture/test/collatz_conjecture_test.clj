@@ -1,6 +1,6 @@
 (ns collatz-conjecture-test
-  (require [clojure.test :refer [deftest is testing]]
-           [collatz-conjecture :refer [collatz]]))
+  (:require [clojure.test :refer [deftest is testing]]
+            [collatz-conjecture :refer [collatz]]))
 
 (deftest steps-for-1
   (testing "zero steps for one"
@@ -20,10 +20,10 @@
 
 (deftest steps-for-0
   (testing "zero is an error"
-    (is (thrown? IllegalArgumentException
+    (is (thrown? Throwable
                  (collatz 0)))))
 
 (deftest steps-for-negative
   (testing "negative value is an error"
-    (is (thrown? IllegalArgumentException
+    (is (thrown? Throwable
                  (collatz -15)))))

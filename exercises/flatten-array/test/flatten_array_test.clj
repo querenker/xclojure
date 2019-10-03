@@ -1,6 +1,6 @@
 (ns flatten-array-test
-  (require [clojure.test :refer [deftest is testing]]
-           [flatten-array]))
+  (:require [clojure.test :refer [deftest is testing]]
+            [flatten-array]))
 
 (deftest flattens-array-of-ints
   (testing "flattens array with just integers present"
@@ -25,4 +25,4 @@
 (deftest all-nils-list
   (testing "All values in nested list are nil"
     (is (empty?
-          (flatten-array/flatten [nil [[[nil]]] nil nil [[nil nil] nil] nil])))))
+         (flatten-array/flatten [nil [[[nil]]] nil nil [[nil nil] nil] nil])))))
